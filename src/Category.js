@@ -8,8 +8,9 @@ class Category extends Component {
       answer={x[1]}
       key={x[0]}
       value={(i + 1) * 100}
-      onClicked={ (val) => this.props.showQuestion(this.props.questions[(val / 100)]) }
-    />))
+      answered={x[2]}
+      onClicked={ this.props.showQuestion }
+    />));
     return (
       <div className="category">
         <div className="category-title">
