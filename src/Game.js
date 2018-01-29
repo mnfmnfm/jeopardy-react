@@ -14,7 +14,6 @@ class Game extends Component {
     }
   }
   showQuestion(question) {
-    debugger;
     this.setState({displayedQuestion: question, displayingQuestion: true, answered: this.state.answered.concat(question[0])});
 
   }
@@ -28,8 +27,11 @@ class Game extends Component {
   render() {
     if(this.state.displayingQuestion) {
       return (
-        <div className="question-displayed" onClick={this.displayQuestionClicked}>
-          { this.state.displayingAnswer ? this.state.displayedQuestion[1] : this.state.displayedQuestion[0]}
+        <div>
+          <h1>Jeopardy!</h1>
+          <div className="question-displayed" onClick={this.displayQuestionClicked}>
+            { this.state.displayingAnswer ? this.state.displayedQuestion[1] : this.state.displayedQuestion[0]}
+          </div>
         </div>
       )
     } else {
@@ -41,7 +43,7 @@ class Game extends Component {
       />));
       return (
         <div>
-          <h2>Jeopardy!</h2>
+          <h1>Jeopardy!</h1>
           <div className="game">
             { categories }
           </div>
