@@ -50,3 +50,16 @@ h1 {
   text-align: center;
   margin: 5px 0;
 }
+
+/* .answered-questions{
+  background-color: darkblue;
+  color: yellow;
+} */
+
+.answered-question {
+  padding: 5px 10px;
+}
+
+.answered-question :first-child {
+  font-weight: bold;
+}

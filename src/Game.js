@@ -14,7 +14,7 @@ class Game extends Component {
     }
   }
   showQuestion(question) {
-    this.setState({displayedQuestion: question, displayingQuestion: true, answered: this.state.answered.concat(question[0])});
+    this.setState({displayedQuestion: question, displayingQuestion: true, answered: this.state.answered.concat(question)});
 
   }
   displayQuestionClicked() {
@@ -41,11 +41,23 @@ class Game extends Component {
         key={x[0]}
         showQuestion = {this.showQuestion}
       />));
+      let answeredQuestions = [];
+      for (let i = 0; i < this.state.answered.length; i+= 2) {
+        answeredQuestions.push( (
+        <div className="answered-question"key={this.state.answered[i]}>
+          <div>{this.state.answered[i]}</div>
+          <div>{this.state.answered[i + 1]}</div>
+        </div>));
+      }
       return (
         <div>
           <h1>Jeopardy!</h1>
           <div className="game">
             { categories }
+          </div>
+          <div className="answered-questions">
+            <h4>Answered questions</h4>
+            {answeredQuestions}
           </div>
         </div>
       );
