@@ -24,6 +24,9 @@ h1 {
 .question-displayed {
   font-size: 4em;
   text-align: center;
+  background-color: darkblue;
+  padding: 10%;
+  color: yellow;
 }
 
 .category, .question {
